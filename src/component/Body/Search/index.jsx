@@ -7,6 +7,7 @@ Search.propTypes = {
 };
 
 function Search(_props) {
+
   return (
     <div className="background">
       <div className="search">
@@ -14,10 +15,12 @@ function Search(_props) {
           <Input
             type="select"
             name="select"
-            id="select">
+            id="select"
+          >
             <option value="0">Tất cả các quỹ</option>
             <option value="1">Quỹ A</option>
             <option value="2">Quỹ B</option>
+            <option value="2">Quỹ C</option>
           </Input>
         </div>
         <div className="search__input-item search__input-date">
@@ -30,8 +33,6 @@ function Search(_props) {
         </div>
         <button className="search__input-item search__btn-search" onClick={() => alert("just only UI -__-")}>TRA CỨU</button>
         <div className="search__input-item search__icon">
-          {/* <i class="far fa-chart-bar"></i>
-          <i class="fas fa-calculator"></i> */}
           <svg id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg" width="27.701" height="28" viewBox="0 0 27.701 28">
             <path id="Path_1" data-name="Path 1" d="M16.427,16.341H11.28a.78.78,0,0,0-.78.78v10.1a.78.78,0,0,0,.78.78h5.147a.78.78,0,0,0,.78-.78v-10.1A.78.78,0,0,0,16.427,16.341Zm-.78,10.1H12.06V17.9h3.587Z" fill="#e87722" />
             <path id="Path_2" data-name="Path 2" d="M26.642,10.218H21.456a.78.78,0,0,0-.78.78V27.219a.78.78,0,0,0,.78.78h5.186a.78.78,0,0,0,.78-.78V11A.78.78,0,0,0,26.642,10.218Zm-.78,16.221H22.236V11.778h3.626Z" fill="#e87722" />
@@ -50,7 +51,6 @@ function Search(_props) {
         </div>
       </div>
     </div>
-
   );
 }
 

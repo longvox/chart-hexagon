@@ -1,68 +1,41 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import colorLineChart from '../../../constants/ColorLineChart.json';
+
 import './Chart.scss';
 
 Chart.propTypes = {
-  data: PropTypes.array,
-  data1: PropTypes.array,
-  data2: PropTypes.array,
-
+  data: PropTypes.array
 };
-Chart.defaultProps = {
-  data: [],
-  data1: [],
-  data2: [],
 
-}
+Chart.defaultProps = {
+  data: []
+};
 
 function Chart(props) {
 
-  const { data, data1, data2 } = props
+  const { data } = props;
+  console.log(data);
+  const fetchDate = data[0].data.map(item => item.date);
 
-  const fetchDate = data.map(item => item.date);
+  const datasets = data.map((item, index) => {
+    const lineColor = index < colorLineChart.colors.length
+      ? colorLineChart.colors[index]
+      : colorLineChart.colorDefault;
+    return {
+      label: item.name,
+      data: item.data.map(item => item.quantity),
+      backgroundColor: lineColor.backgroundColor,
+      borderColor: lineColor.borderWidth,
+      borderWidth: 2,
+      lineTension: 0,
+      pointHoverBorderWidth: 15,
+      pointHoverBorderColor: lineColor.pointHoverBorderColor,
+      pointBackgroundColor: lineColor.pointBackgroundColor
+    }
+  });
 
-  const fetchQuantity = data.map(item => item.quantity);
-  const fetchQuantity1 = data1.map(item => item.quantity);
-  const fetchQuantity2 = data2.map(item => item.quantity);
-
-  const dataSetQuantityA= {
-    label: 'Quỹ A',
-    data: fetchQuantity,
-    backgroundColor: 'rgba(0,0,0,0)',
-    borderColor: '#E87722',
-    borderWidth: 2,
-    lineTension: 0,
-    pointHoverBorderWidth: 15,
-    pointHoverBorderColor: 'rgba(232, 119, 34, 0.2)',
-    pointBackgroundColor: '#E87722',
-  };
-
-  const dataSetQuantityB = {
-    label: 'Quỹ B',
-    data: fetchQuantity1,
-    backgroundColor: 'rgba(0,0,0,0)',
-    borderColor: '#6ECEB2',
-    borderWidth: 2,
-    lineTension: 0,
-    pointHoverBorderWidth: 15,
-    pointHoverBorderColor: 'rgba(22, 146, 146, 0.2)',
-    pointBackgroundColor: '#6ECEB2',
-  }
-
-  const dataSetQuantityC = {
-    label: 'Quỹ C',
-    data: fetchQuantity2,
-    backgroundColor: 'rgba(0,0,0,0)',
-    borderColor: '#FED141',
-    borderWidth: 2,
-    lineTension: 0,
-    pointHoverBorderWidth: 15,
-    pointHoverBorderColor: 'rgba(254, 209, 65, 0.2)',
-    pointBackgroundColor: '#FED141',
-  }
-
-  let datasets = [dataSetQuantityA, dataSetQuantityB, dataSetQuantityC];
 
   return (
     <div className="chart">
@@ -71,30 +44,23 @@ function Chart(props) {
           labels: fetchDate,
           datasets: datasets
         }}
-
         options={{
           responsive: true,
           maintainAspectRatio: false,
-
           scales: {
             xAxes: [{
               display: true,
-
               ticks: {
                 fontColor: '#0A3B32',
                 fontSize: 16,
                 fontFamily: 'FWDCircularVietTT-Book',
                 padding: 15,
               }
-
-
             }],
             yAxes: [{
               display: true,
-
               ticks: {
                 beginAtZero: true,
-
                 fontColor: '#0A3B32',
                 fontSize: 16,
                 fontFamily: 'FWDCircularVietTT-Book',
@@ -170,7 +136,7 @@ function Chart(props) {
                 });
                 innerHtml += '</thead><tbody>';
 
-                bodyLines.forEach(function (body, i) {
+                bodyLines.forEach(function (body) {
                   const content = `Giá trị ${body.toString().replace('Q', 'q')}`;
                   innerHtml += `<tr><td class="tooltil-css tooltip-content">${content}</td></tr>`;
                 });

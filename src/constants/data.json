@@ -1,81 +1,91 @@
 {
-  "data": [
+  "dataQuantity": [
     {
-      "date": "1/01/2020",
-      "quantity": 20
+      "name": "Qũy A",
+      "data": [
+        {
+          "date": "1/01/2020",
+          "quantity": 20
+        },
+        {
+          "date": "2/01/2020",
+          "quantity": 12
+        },
+        {
+          "date": "3/01/2020",
+          "quantity": 40
+        },
+        {
+          "date": "4/01/2020",
+          "quantity": 57
+        },
+        {
+          "date": "5/01/2020",
+          "quantity": 19
+        },
+        {
+          "date": "6/01/2020",
+          "quantity": 35
+        }
+      ]
     },
     {
-      "date": "2/01/2020",
-      "quantity": 12
+      "name": "Quỹ B",
+      "data": [
+        {
+          "date": "1/01/2020",
+          "quantity": 10
+        },
+        {
+          "date": "2/01/2020",
+          "quantity": 40
+        },
+        {
+          "date": "3/01/2020",
+          "quantity": 24
+        },
+        {
+          "date": "4/01/2020",
+          "quantity": 67
+        },
+        {
+          "date": "5/01/2020",
+          "quantity": 84
+        },
+        {
+          "date": "6/01/2020",
+          "quantity": 43
+        }
+      ]
     },
     {
-      "date": "3/01/2020",
-      "quantity": 40
-    },
-    {
-      "date": "4/01/2020",
-      "quantity": 57
-    },
-    {
-      "date": "5/01/2020",
-      "quantity": 19
-    },
-    {
-      "date": "6/01/2020",
-      "quantity": 35
-    }
-  ],
-  "data1": [
-    {
-      "date": "1/01/2020",
-      "quantity": 10
-    },
-    {
-      "date": "2/01/2020",
-      "quantity": 40
-    },
-    {
-      "date": "3/01/2020",
-      "quantity": 24
-    },
-    {
-      "date": "4/01/2020",
-      "quantity": 67
-    },
-    {
-      "date": "5/01/2020",
-      "quantity": 84
-    },
-    {
-      "date": "6/01/2020",
-      "quantity": 43
-    }
-  ],
-  "data2": [
-    {
-      "date": "1/01/2020",
-      "quantity": 50
-    },
-    {
-      "date": "2/01/2020",
-      "quantity": 47
-    },
-    {
-      "date": "3/01/2020",
-      "quantity": 80
-    },
-    {
-      "date": "4/01/2020",
-      "quantity": 20
-    },
-    {
-      "date": "5/01/2020",
-      "quantity": 5
-    },
-    {
-      "date": "6/01/2020",
-      "quantity": 67
+      "name": "Quỹ C",
+      "data": [
+        {
+          "date": "1/01/2020",
+          "quantity": 50
+        },
+        {
+          "date": "2/01/2020",
+          "quantity": 47
+        },
+        {
+          "date": "3/01/2020",
+          "quantity": 80
+        },
+        {
+          "date": "4/01/2020",
+          "quantity": 20
+        },
+        {
+          "date": "5/01/2020",
+          "quantity": 5
+        },
+        {
+          "date": "6/01/2020",
+          "quantity": 67
+        }
+      ]
     }
   ]
 }
-
