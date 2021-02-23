@@ -1,13 +1,12 @@
 import React from 'react';
 import './Search.scss';
-import { Input, Button } from 'reactstrap';
+import { Input } from 'reactstrap';
 
 
 Search.propTypes = {
-
 };
 
-function Search(props) {
+function Search(_props) {
   return (
     <div className="background">
       <div className="search">
@@ -48,7 +47,6 @@ function Search(props) {
             <path id="Path_9" data-name="Path 9" d="M20.049,17.5H4.252a.584.584,0,1,1,0-1.167h15.8a.584.584,0,1,1,0,1.167Z" fill="#0a3b32" />
             <path id="Path_10" data-name="Path 10" d="M20.049,21H4.252a.584.584,0,1,1,0-1.167h15.8a.584.584,0,1,1,0,1.167Z" fill="#0a3b32" />
           </svg>
-
         </div>
       </div>
     </div>

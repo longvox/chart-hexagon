@@ -5,7 +5,7 @@ Header.propTypes = {
 
 };
 
-function Header(props) {
+function Header(_props) {
   const [read, setRead] = useState(true);
 
   useEffect(() => {

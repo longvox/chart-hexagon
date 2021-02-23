@@ -20,53 +20,56 @@ function Chart(props) {
 
   const { data, data1, data2 } = props
 
-  let fetchDate = data.map(item => item.date);
+  const fetchDate = data.map(item => item.date);
 
-  let fetchQuantity = data.map(item => item.quantity);
-  let fetchQuantity1 = data1.map(item => item.quantity);
-  let fetchQuantity2 = data2.map(item => item.quantity);
+  const fetchQuantity = data.map(item => item.quantity);
+  const fetchQuantity1 = data1.map(item => item.quantity);
+  const fetchQuantity2 = data2.map(item => item.quantity);
+
+  const dataSetQuantityA= {
+    label: 'Quỹ A',
+    data: fetchQuantity,
+    backgroundColor: 'rgba(0,0,0,0)',
+    borderColor: '#E87722',
+    borderWidth: 2,
+    lineTension: 0,
+    pointHoverBorderWidth: 15,
+    pointHoverBorderColor: 'rgba(232, 119, 34, 0.2)',
+    pointBackgroundColor: '#E87722',
+  };
+
+  const dataSetQuantityB = {
+    label: 'Quỹ B',
+    data: fetchQuantity1,
+    backgroundColor: 'rgba(0,0,0,0)',
+    borderColor: '#6ECEB2',
+    borderWidth: 2,
+    lineTension: 0,
+    pointHoverBorderWidth: 15,
+    pointHoverBorderColor: 'rgba(22, 146, 146, 0.2)',
+    pointBackgroundColor: '#6ECEB2',
+  }
+
+  const dataSetQuantityC = {
+    label: 'Quỹ C',
+    data: fetchQuantity2,
+    backgroundColor: 'rgba(0,0,0,0)',
+    borderColor: '#FED141',
+    borderWidth: 2,
+    lineTension: 0,
+    pointHoverBorderWidth: 15,
+    pointHoverBorderColor: 'rgba(254, 209, 65, 0.2)',
+    pointBackgroundColor: '#FED141',
+  }
+
+  let datasets = [dataSetQuantityA, dataSetQuantityB, dataSetQuantityC];
 
   return (
-
     <div className="chart">
       <Line
         data={{
           labels: fetchDate,
-          datasets: [
-            {
-              label: 'Quỹ A',
-              data: fetchQuantity,
-              backgroundColor: 'rgba(0,0,0,0)',
-              borderColor: '#E87722',
-              borderWidth: 2,
-              lineTension: 0,
-              pointHoverBorderWidth: 15,
-              pointHoverBorderColor: 'rgba(232, 119, 34, 0.2)',
-              pointBackgroundColor: '#E87722',
-            },
-            {
-              label: 'Quỹ B',
-              data: fetchQuantity1,
-              backgroundColor: 'rgba(0,0,0,0)',
-              borderColor: '#6ECEB2',
-              borderWidth: 2,
-              lineTension: 0,
-              pointHoverBorderWidth: 15,
-              pointHoverBorderColor: 'rgba(22, 146, 146, 0.2)',
-              pointBackgroundColor: '#6ECEB2',
-            },
-            {
-              label: 'Quỹ C',
-              data: fetchQuantity2,
-              backgroundColor: 'rgba(0,0,0,0)',
-              borderColor: '#FED141',
-              borderWidth: 2,
-              lineTension: 0,
-              pointHoverBorderWidth: 15,
-              pointHoverBorderColor: 'rgba(254, 209, 65, 0.2)',
-              pointBackgroundColor: '#FED141',
-            },
-          ]
+          datasets: datasets
         }}
 
         options={{

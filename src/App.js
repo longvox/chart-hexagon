@@ -1,16 +1,15 @@
-import './App.css';
-import Header from './component/Header';
-import Body from './component/Body';
-import { Container } from 'reactstrap';
+import "./App.css";
+import Header from "./component/Header";
+import Body from "./component/Body";
+import { Container } from "reactstrap";
 
 function App() {
-  return (  
+  return (
     <div className="App">
       <Container>
-        <Header/>
-        <Body/>
+        <Header />
+        <Body />
       </Container>
-
     </div>
   );
 }

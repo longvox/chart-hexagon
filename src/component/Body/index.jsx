@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'reactstrap';
 import './Body.scss';
 import Chart from './Chart';
 import Search from './Search';
@@ -11,7 +10,7 @@ Body.propTypes = {
 
 };
 
-function Body(props) {
+function Body(_props) {
   const [change, setChange] = useState(false);
 
   const [data, setData] = useState(DATA.data);
@@ -19,19 +18,12 @@ function Body(props) {
   const [data2, setData2] = useState(DATA.data2);
 
   function randomDate() {
-    const week = DATE
-    let date = week[data.length % week.length];
+    const week = DATE;
+    const date = week[data.length % week.length];
     return date;
   }
 
   function randomData() {
-    return Math.trunc(Math.random() * 100);
-  }
-
-  function randomData1() {
-    return Math.trunc(Math.random() * 100);
-  }
-  function randomData2() {
     return Math.trunc(Math.random() * 100);
   }
 
@@ -49,14 +41,14 @@ function Body(props) {
 
     const newPoint1 = {
       date: randomDate(),
-      quantity: randomData1(),
+      quantity: randomData(),
     }
     newData1.push(newPoint1);
     setData1(newData1);
 
     const newPoint2 = {
       date: randomDate(),
-      quantity: randomData2(),
+      quantity: randomData(),
     }
     newData2.push(newPoint2);
     setData2(newData2);
